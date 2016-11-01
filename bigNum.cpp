@@ -108,9 +108,31 @@ bool bigNum::operator>(bigNum num2){
     }
     return success;
 }
+bool bigNum::operator>=(bigNum num2){
+    bigNum c = *this;
+    bool success;
+    if(c>num2)
+        success = true;
+    else if(c == num2)
+        success = true;
+    else
+        success = false;
+    return success;
+}
 bool bigNum::operator<(bigNum num2){
     bigNum num = *this;
     bool success = num2>num;
+    return success;
+}
+bool bigNum::operator<=(bigNum num2){
+    bigNum c = *this;
+    bool success;
+    if(c<num2)
+        success = true;
+    else if(c == num2)
+        success = true;
+    else
+        success = false;
     return success;
 }
 ostream& operator<<(ostream &out, bigNum x){

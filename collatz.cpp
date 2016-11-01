@@ -8,7 +8,7 @@ int main(){
     cin>>start;
     cout<<"End: ";
     cin>>end;
-    for(i=start; i<end; i++){ 
+    for(i=start; i<=end; i++){ 
         count = 0; //Set initial chain count to 0
         j = i;
         while(j!=1){    //Runs until j reaches 1

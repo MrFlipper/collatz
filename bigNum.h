@@ -11,20 +11,19 @@ public:
     bigNum(int x);
     friend ostream& operator<<(ostream&, bigNum);
     friend istream& operator>>(istream&, bigNum&);
-    void readBig();
-	void printBig();
 	bigNum operator+(bigNum);
     bigNum operator++(int); //postincrement
     bigNum operator++(); // preincrement
-//    bigNum operator=(bigNum num2);
-    bigNum operator+=(bigNum num2);
-    bool operator==(bigNum num2);
-    bool operator>(bigNum num2);
-    bool operator<(bigNum num2);
+    bigNum operator+=(bigNum);
+    bool operator==(bigNum);
+    bool operator>(bigNum);
+    bool operator<(bigNum);
+    bool operator>=(bigNum);
+    bool operator<=(bigNum);
     bool operator!=(bigNum);
     bigNum operator*(bigNum);
-    bigNum divideByTwo();
-    bool isEven();
+    bigNum divideByTwo(); //Divides a given bigNum by 2 (Prerequisite: bigNum is even)
+    bool isEven();  //Checks if a given bigNum is even
 
 private:
 	int num[MAX_DIGITS];
