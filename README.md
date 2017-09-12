@@ -1,7 +1,7 @@
 # Collatz
 Program that calculates the collatz conjecture for a given interval and finds the longest chain.
 
-##Collatz Conjecture
+## Collatz Conjecture
 The Collatz Conjecture (AKA the 3n+1 conjecture) is this idea that if you choose
 a natural number, n, and apply the following formula
 
