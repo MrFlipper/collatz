@@ -1,5 +1,6 @@
 #include<iostream>
 #include"bigNum.h"
+#include <ctime>
 using namespace std;
 int main(){ 
     bigNum i, j, start, end, count; 
@@ -8,6 +9,7 @@ int main(){
     cin>>start;
     cout<<"End: ";
     cin>>end;
+    clock_t begin = clock();
     for(i=start; i<=end; i++){ 
         count = 0; //Set initial chain count to 0
         j = i;
@@ -27,6 +29,7 @@ int main(){
             max[1] = count;
         }
     }
+    clock_t cend = clock();
     cout<<"The longest Collatz Conjecture chain from "; //Overloaded ostream operator crashes program when
     cout<<start;                                        //outputting a bigNum and anything else on the same line. (needs fixing)
     cout<<" to ";
@@ -36,5 +39,8 @@ int main(){
     cout<<" with a length of ";
     cout<<max[1];
     cout<<endl;
+    cout<<"Time elapsed: ";
+    double elapsed = double(cend - begin) / CLOCKS_PER_SEC;
+    cout<<elapsed<<endl;
     return 0;
 }
