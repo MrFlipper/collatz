@@ -87,7 +87,7 @@ bool bigNum::operator>(bigNum num2){
     bool success = true;
     bool done = false;
     int i = MAX_DIGITS-1;
-    while(num[i]==0 and num2.num[i]==0)
+    while(num[i]==0 and num2.num[i]==0) // Remove leading zeros
         i--;
     while(not done){
         if(num[i]==num2.num[i]){
@@ -143,8 +143,13 @@ ostream& operator<<(ostream &out, bigNum x){
     if(i>=0){
         found = true;
 	    for(i; i>=0;i--){
-            out<<x.num[i];
-        }
+                if((i+1)%3==0 && i != 0 && not found){  //Formats the output with commas for cleaness (hackabout, but works!)
+                    out<<",";
+                }
+                out<<x.num[i];
+		found = false; //Sets found to false to signify that we're no longer at the beginning of the num
+            }
+           found = true; //Resets found so we don't output unnecessary 0
     }
     if(not found)
         out<<0;
